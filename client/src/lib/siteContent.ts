@@ -23,7 +23,7 @@ export const navigation = [
 
 export const slideshowImages = [
   {
-    src: "/manus-storage/larchmount-hero-dawn-clean_229c4ce9.png",
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341563393/TWlHLMMgYQIIfoNO.png",
     eyebrow: "Stratford-upon-Avon",
     title: "Course views shaped by morning light and measured pace.",
     body:
@@ -37,7 +37,7 @@ export const slideshowImages = [
       "Designed to suggest old-world hospitality without feeling remote, formal, or inaccessible to visitors.",
   },
   {
-    src: "/manus-storage/larchmount-visitor-golfers-clean_f3ce5fd9.png",
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663341563393/ctUnSTClyrQKWpsQ.png",
     eyebrow: "Visitor Golf",
     title: "Straightforward booking, generous tee sheets, and an easy first impression.",
     body:
