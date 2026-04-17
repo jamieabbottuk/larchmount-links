@@ -14,22 +14,16 @@ import { clubhouseImage, homeHighlights, site, slideshowImages } from "@/lib/sit
 
 export default function Home() {
   useEffect(() => {
-    if (!import.meta.env.DEV) {
-      return;
-    }
-
     const existingScript = document.getElementById("golfvox-webchat-embed");
     if (existingScript) {
       return;
     }
-
     const script = document.createElement("script");
     script.id = "golfvox-webchat-embed";
-    script.src = "http://localhost:5174/webchatembed.js";
+    script.src = "https://app.golfvox.ai/webchatembed.js";
     script.async = true;
     script.dataset.club = "test-club";
     document.body.appendChild(script);
-
     return () => {
       script.remove();
     };
