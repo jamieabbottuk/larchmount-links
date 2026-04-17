@@ -20,7 +20,7 @@ export default function Home() {
     }
     const script = document.createElement("script");
     script.id = "golfvox-webchat-embed";
-    script.src = "https://app.golfvox.ai/webchatembed.js";
+    script.src = "http://localhost:5174/webchatembed.js";
     script.async = true;
     script.dataset.club = "test-club";
     document.body.appendChild(script);
