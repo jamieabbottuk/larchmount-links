@@ -4,7 +4,7 @@ The header and footer should feel like club stationery translated into a polishe
 */
 
 import { Link, useLocation } from "wouter";
-import { Phone, Mail, MapPin, Menu } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -150,6 +150,14 @@ export function ClubLayout({ children }: ClubLayoutProps) {
                 <FooterContact icon={Phone} href={footerLinks.contact[0].href} label={footerLinks.contact[0].label} />
                 <FooterContact icon={Mail} href={footerLinks.contact[1].href} label={footerLinks.contact[1].label} />
                 <FooterContact icon={MapPin} href={footerLinks.contact[2].href} label={footerLinks.contact[2].label} />
+                <div id="clubvox-chat" className="cursor-pointer">
+                  <div className="flex items-start gap-3 transition-colors duration-300 hover:text-white">
+                    <span className="mt-0.5 rounded-full border border-white/12 bg-white/6 p-2 text-[color:var(--gold-soft)]">
+                      <MessageCircle className="h-4 w-4" />
+                    </span>
+                    <span className="leading-6">Chat with us</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
