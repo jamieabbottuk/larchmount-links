@@ -3,7 +3,6 @@ Design reminder: Edwardian sporting-estate aesthetic with asymmetrical editorial
 This page should feel like a high-end club brochure brought to life, not a generic landing page.
 */
 
-import { useEffect } from "react";
 import { ArrowUpRight, Trees, CalendarClock, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { ClubLayout } from "@/components/ClubLayout";
@@ -13,22 +12,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { clubhouseImage, homeHighlights, site, slideshowImages } from "@/lib/siteContent";
 
 export default function Home() {
-  useEffect(() => {
-    const existingScript = document.getElementById("golfvox-webchat-embed");
-    if (existingScript) {
-      return;
-    }
-    const script = document.createElement("script");
-    script.id = "golfvox-webchat-embed";
-    script.src = "http://localhost:5174/webchatembed.js";
-    script.async = true;
-    script.dataset.club = "test-club";
-    document.body.appendChild(script);
-    return () => {
-      script.remove();
-    };
-  }, []);
-
+  // Chat widget is injected by ClubLayout (moreton-paddox-golf-club).
   return (
     <ClubLayout>
       <HeroSlideshow />

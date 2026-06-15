@@ -12,6 +12,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Members from "./pages/Members";
+import Preston from "./pages/Preston";
 import TeeTimes from "./pages/TeeTimes";
 
 function AppRoutes() {
@@ -20,6 +21,7 @@ function AppRoutes() {
       <Route path="/" component={Home} />
       <Route path="/tee-times" component={TeeTimes} />
       <Route path="/members" component={Members} />
+      <Route path="/preston" component={Preston} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

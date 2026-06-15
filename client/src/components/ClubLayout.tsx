@@ -5,7 +5,7 @@ The header and footer should feel like club stationery translated into a polishe
 
 import { Link, useLocation } from "wouter";
 import { Phone, Mail, MapPin, Menu, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { site, navigation, footerLinks } from "@/lib/siteContent";
@@ -18,6 +18,24 @@ type ClubLayoutProps = {
 export function ClubLayout({ children }: ClubLayoutProps) {
   const [location] = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Inject the moreton-paddox web-chat widget for the Larchmount pages.
+  // (This was previously a global <script> in index.html; it now loads
+  // per-page so that other routes — e.g. /preston — can load their own widget
+  // without two chat widgets appearing at once.)
+  useEffect(() => {
+    const id = "golfvox-webchat-embed";
+    if (document.getElementById(id)) return;
+    const script = document.createElement("script");
+    script.id = id;
+    script.defer = true;
+    script.src = "https://clubvox-test-web.fly.dev/webchatembed.js";
+    script.dataset.club = "moreton-paddox-golf-club";
+    document.body.appendChild(script);
+    return () => {
+      script.remove();
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
